@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"enzyme",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "enzyme",
+    "description": "api documentation for [enzyme (v2.8.0)](https://github.com/airbnb/enzyme#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-enzyme.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-enzyme) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-enzyme.svg)](https://travis-ci.org/npmdoc/node-npmdoc-enzyme)",
     "devDependencies": {
-        "enzyme": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "enzyme": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-enzyme",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-enzyme",
+    "keywords": [
+        "documentation",
+        "enzyme"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_enzyme.js",
+    "name": "npmdoc-enzyme",
+    "nameAlias": "npmdoc_enzyme",
+    "nameOriginal": "npmdoc-enzyme",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-enzyme.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
