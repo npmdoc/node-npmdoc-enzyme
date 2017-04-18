@@ -1,9 +1,14 @@
-# api documentation for  [enzyme (v2.8.0)](https://github.com/airbnb/enzyme#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-enzyme.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-enzyme) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-enzyme.svg)](https://travis-ci.org/npmdoc/node-npmdoc-enzyme)
+# npmdoc-enzyme
+
+#### api documentation for  [enzyme (v2.8.2)](https://github.com/airbnb/enzyme#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-enzyme.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-enzyme) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-enzyme.svg)](https://travis-ci.org/npmdoc/node-npmdoc-enzyme)
+
 #### JavaScript Testing utilities for React
 
-[![NPM](https://nodei.co/npm/enzyme.png?downloads=true)](https://www.npmjs.com/package/enzyme)
+[![NPM](https://nodei.co/npm/enzyme.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/enzyme)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-enzyme/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-enzyme_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-enzyme/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-enzyme/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-enzyme/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-enzyme/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-enzyme/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-enzyme/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "Leland Richardson",
-        "email": "leland.richardson@airbnb.com"
+        "name": "Leland Richardson"
     },
     "bugs": {
         "url": "https://github.com/airbnb/enzyme/issues"
@@ -32,28 +36,30 @@
         "object.assign": "^4.0.4",
         "object.entries": "^1.0.3",
         "object.values": "^1.0.3",
+        "prop-types": "^15.5.4",
         "uuid": "^2.0.3"
     },
     "description": "JavaScript Testing utilities for React",
     "devDependencies": {
-        "babel-cli": "^6.18.0",
-        "babel-core": "^6.18.2",
-        "babel-eslint": "^7.1.0",
-        "babel-loader": "^6.2.7",
-        "babel-preset-airbnb": "^2.1.1",
-        "babel-register": "^6.18.0",
+        "babel-cli": "^6.24.1",
+        "babel-core": "^6.24.1",
+        "babel-eslint": "^7.2.1",
+        "babel-loader": "^6.4.1",
+        "babel-preset-airbnb": "^2.2.3",
+        "babel-register": "^6.24.1",
         "chai": "^3.5.0",
-        "coveralls": "^2.11.15",
+        "coveralls": "^2.13.0",
+        "create-react-class": "^15.5.2",
         "enzyme-example-jest": "^0.1.0",
         "enzyme-example-karma": "^0.1.1",
         "enzyme-example-karma-webpack": "^0.1.4",
         "enzyme-example-mocha": "^0.1.0",
         "enzyme-example-react-native": "^0.1.0",
-        "eslint": "^3.10.2",
+        "eslint": "^3.19.0",
         "eslint-config-airbnb": "^13.0.0",
         "eslint-plugin-import": "^2.2.0",
         "eslint-plugin-jsx-a11y": "^2.2.3",
-        "eslint-plugin-react": "^6.7.1",
+        "eslint-plugin-react": "^6.10.3",
         "gitbook-cli": "^1.0.1",
         "in-publish": "^2.0.0",
         "istanbul": "^1.0.0-alpha.2",
@@ -65,18 +71,19 @@
         "karma-mocha": "^1.2.0",
         "karma-sourcemap-loader": "^0.3.7",
         "karma-webpack": "^1.8.0",
+        "lodash": "^4.17.4",
         "mocha": "^3.1.2",
-        "rimraf": "^2.5.4",
+        "rimraf": "^2.6.1",
         "safe-publish-latest": "^1.1.1",
-        "sinon": "^1.17.6",
+        "sinon": "^1.17.7",
         "webpack": "^1.13.3"
     },
     "directories": {},
     "dist": {
-        "shasum": "86cc1fc96e5cbd7695766dd6e89deb13a0aead51",
-        "tarball": "https://registry.npmjs.org/enzyme/-/enzyme-2.8.0.tgz"
+        "shasum": "6c8bcb05012abc4aa4bc3213fb23780b9b5b1714",
+        "tarball": "https://registry.npmjs.org/enzyme/-/enzyme-2.8.2.tgz"
     },
-    "gitHead": "a4c63a19f8648942b3fca72bf34d863cfa0c6dd9",
+    "gitHead": "901b783f8d6d766308fe42500d7be5f507e57d1d",
     "homepage": "https://github.com/airbnb/enzyme#readme",
     "keywords": [
         "javascript",
@@ -96,20 +103,16 @@
     "main": "build",
     "maintainers": [
         {
-            "name": "airbnb",
-            "email": "jordan.harband+npm@airbnb.com"
+            "name": "airbnb"
         },
         {
-            "name": "gdborton",
-            "email": "gdborton@gmail.com"
+            "name": "gdborton"
         },
         {
-            "name": "intelligibabble",
-            "email": "leland.m.richardson@gmail.com"
+            "name": "intelligibabble"
         },
         {
-            "name": "ljharb",
-            "email": "ljharb@gmail.com"
+            "name": "ljharb"
         }
     ],
     "name": "enzyme",
@@ -117,7 +120,6 @@
     "peerDependencies": {
         "react": "0.13.x || 0.14.x || ^15.0.0-0 || 15.x"
     },
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/airbnb/enzyme.git"
@@ -138,177 +140,21 @@
         "preversion": "npm run clean && npm run check",
         "react:13": "rimraf node_modules/.bin/npm && npm run react:clean && npm i react@0.13 && npm install",
         "react:14": "rimraf node_modules/.bin/npm && npm run react:clean && npm i react@0.14 react-dom@0.14 react-addons-test-utils@0.14 && npm install",
-        "react:15": "rimraf node_modules/.bin/npm && npm run react:clean && npm i react@15 react-dom@15 react-addons-test-utils@15 && npm install",
-        "react:clean": "rimraf node_modules/react node_modules/react-dom node_modules/react-addons-test-utils",
+        "react:15": "rimraf node_modules/.bin/npm && npm run react:clean && npm i react@15 react-dom@15 create-react-class@15 react-test-renderer@^15.5.4 && npm install",
+        "react:15.4": "rimraf node_modules/.bin/npm && npm run react:clean && npm i react@15.4 react-dom@15.4 react-addons-test-utils@15.4 && npm install",
+        "react:clean": "rimraf node_modules/react node_modules/react-dom node_modules/react-addons-test-utils node_modules/react-test-renderer",
         "test": "npm run clean && npm run build && npm run test:only",
-        "test:all": "npm run react:13 && npm run test:only && npm run react:14 && npm run test:only && npm run react:15 && npm run test:only",
+        "test:all": "npm run react:13 && npm run test:only && npm run react:14 && npm run test:only && npm run react:15.4 && npm run test:only && npm run react:15 && npm run test:only",
         "test:env": "sh ./example-test.sh",
         "test:karma": "karma start",
         "test:only": "mocha --recursive test",
         "test:single": "mocha --watch",
         "test:watch": "mocha --recursive --watch test",
-        "travis": "babel-node ./node_modules/.bin/istanbul cover --report html _mocha -- test --recursive",
+        "travis": "babel-node \"$(which istanbul)\" cover --report html _mocha -- test --recursive",
         "version": "npm run build"
     },
-    "version": "2.8.0"
+    "version": "2.8.2"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module enzyme](#apidoc.module.enzyme)
-1.  [function <span class="apidocSignatureSpan">enzyme.</span>ReactWrapper (nodes, root)](#apidoc.element.enzyme.ReactWrapper)
-1.  [function <span class="apidocSignatureSpan">enzyme.</span>ShallowWrapper (nodes, root)](#apidoc.element.enzyme.ShallowWrapper)
-1.  [function <span class="apidocSignatureSpan">enzyme.</span>mount (node, options)](#apidoc.element.enzyme.mount)
-1.  [function <span class="apidocSignatureSpan">enzyme.</span>render (node)](#apidoc.element.enzyme.render)
-1.  [function <span class="apidocSignatureSpan">enzyme.</span>shallow (node, options)](#apidoc.element.enzyme.shallow)
-
-
-
-# <a name="apidoc.module.enzyme"></a>[module enzyme](#apidoc.module.enzyme)
-
-#### <a name="apidoc.element.enzyme.ReactWrapper"></a>[function <span class="apidocSignatureSpan">enzyme.</span>ReactWrapper (nodes, root)](#apidoc.element.enzyme.ReactWrapper)
-- description and source-code
-```javascript
-function ReactWrapper(nodes, root) {
-  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-  _classCallCheck(this, ReactWrapper);
-
-  if (!global.window && !global.document) {
-    throw new Error('It looks like you called 'mount()' without a global document being loaded.');
-  }
-
-  if (!root) {
-    var ReactWrapperComponent = (0, _ReactWrapperComponent2['default'])(nodes, options);
-    this.component = (0, _reactCompat.renderWithOptions)(_react2['default'].createElement(ReactWrapperComponent, {
-      Component: nodes.type,
-      props: nodes.props,
-      context: options.context
-    }), options);
-    this.root = this;
-    this.node = this.component.getWrappedComponent();
-    this.nodes = [this.node];
-    this.length = 1;
-  } else {
-    this.component = null;
-    this.root = root;
-    if (!nodes) {
-      this.nodes = [];
-    } else if (!Array.isArray(nodes)) {
-      this.node = nodes;
-      this.nodes = [nodes];
-    } else {
-      this.node = nodes[0];
-      this.nodes = nodes;
-    }
-    this.length = this.nodes.length;
-  }
-  this.options = options;
-  this.complexSelector = new _ComplexSelector2['default'](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
-.childrenOfInst);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.enzyme.ShallowWrapper"></a>[function <span class="apidocSignatureSpan">enzyme.</span>ShallowWrapper (nodes, root)](#apidoc.element.enzyme.ShallowWrapper)
-- description and source-code
-```javascript
-function ShallowWrapper(nodes, root) {
-  var _this = this;
-
-  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-  _classCallCheck(this, ShallowWrapper);
-
-  validateOptions(options);
-  if (!root) {
-    this.root = this;
-    this.unrendered = nodes;
-    this.renderer = (0, _reactCompat.createShallowRenderer)();
-    (0, _Utils.withSetStateAllowed)(function () {
-      (0, _reactCompat.batchedUpdates)(function () {
-        _this.renderer.render(nodes, options.context);
-        var instance = _this.instance();
-        if (options.lifecycleExperimental && instance && typeof instance.componentDidMount === 'function') {
-          instance.componentDidMount();
-        }
-      });
-    });
-    this.node = this.renderer.getRenderOutput();
-    this.nodes = [this.node];
-    this.length = 1;
-  } else {
-    this.root = root;
-    this.unrendered = null;
-    this.renderer = null;
-    if (!Array.isArray(nodes)) {
-      this.node = nodes;
-      this.nodes = [nodes];
-    } else {
-      this.node = nodes[0];
-      this.nodes = nodes;
-    }
-    this.length = this.nodes.length;
-  }
-  this.options = options;
-  this.complexSelector = new _ComplexSelector2['default'](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
-.childrenOfNode);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.enzyme.mount"></a>[function <span class="apidocSignatureSpan">enzyme.</span>mount (node, options)](#apidoc.element.enzyme.mount)
-- description and source-code
-```javascript
-function mount(node, options) {
-  return new _ReactWrapper2['default'](node, null, options);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.enzyme.render"></a>[function <span class="apidocSignatureSpan">enzyme.</span>render (node)](#apidoc.element.enzyme.render)
-- description and source-code
-```javascript
-function render(node) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-  if (options.context && (node.type.contextTypes || options.childContextTypes)) {
-    var childContextTypes = (0, _object2['default'])({}, node.type.contextTypes || {}, options.childContextTypes);
-    var ContextWrapper = createContextWrapperForNode(node, options.context, childContextTypes);
-    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2['default'].createElement(ContextWrapper, null));
-    return _cheerio2['default'].load(_html).root();
-  }
-  var html = (0, _reactCompat.renderToStaticMarkup)(node);
-  return _cheerio2['default'].load(html).root();
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.enzyme.shallow"></a>[function <span class="apidocSignatureSpan">enzyme.</span>shallow (node, options)](#apidoc.element.enzyme.shallow)
-- description and source-code
-```javascript
-function shallow(node, options) {
-  return new _ShallowWrapper2['default'](node, null, options);
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
