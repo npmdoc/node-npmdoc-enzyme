@@ -51,7 +51,7 @@
 
         href="https://github.com/airbnb/enzyme#readme"
 
-    >enzyme (v2.8.0)</a>
+    >enzyme (v2.8.2)</a>
 </h1>
 <h4>JavaScript Testing utilities for React</h4>
 <div class="apidocSectionDiv"><a
@@ -100,6 +100,71 @@
         <li>
 
             <a class="apidocElementLiA" href="#apidoc.element.enzyme.shallow">
+            function <span class="apidocSignatureSpan">enzyme.</span>shallow
+            <span class="apidocSignatureSpan">(node, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.enzyme.ReactWrapper">module enzyme.ReactWrapper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.enzyme.ReactWrapper.ReactWrapper">
+            function <span class="apidocSignatureSpan">enzyme.</span>ReactWrapper
+            <span class="apidocSignatureSpan">(nodes, root)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.enzyme.ShallowWrapper">module enzyme.ShallowWrapper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.enzyme.ShallowWrapper.ShallowWrapper">
+            function <span class="apidocSignatureSpan">enzyme.</span>ShallowWrapper
+            <span class="apidocSignatureSpan">(nodes, root)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.enzyme.mount">module enzyme.mount</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.enzyme.mount.mount">
+            function <span class="apidocSignatureSpan">enzyme.</span>mount
+            <span class="apidocSignatureSpan">(node, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.enzyme.render">module enzyme.render</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.enzyme.render.render">
+            function <span class="apidocSignatureSpan">enzyme.</span>render
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.enzyme.shallow">module enzyme.shallow</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.enzyme.shallow.shallow">
             function <span class="apidocSignatureSpan">enzyme.</span>shallow
             <span class="apidocSignatureSpan">(node, options)</span>
             </a>
@@ -184,7 +249,7 @@
     this.unrendered = nodes;
     this.renderer = (0, _reactCompat.createShallowRenderer)();
     (0, _Utils.withSetStateAllowed)(function () {
-      (0, _reactCompat.batchedUpdates)(function () {
+      performBatchedUpdates(_this, function () {
         _this.renderer.render(nodes, options.context);
         var instance = _this.instance();
         if (options.lifecycleExperimental &#x26;&#x26; instance &#x26;&#x26; typeof instance.componentDidMount === &#x27;function&#x27;) {
@@ -258,6 +323,188 @@
 
     <h2>
         <a href="#apidoc.element.enzyme.shallow" id="apidoc.element.enzyme.shallow">
+        function <span class="apidocSignatureSpan">enzyme.</span>shallow
+        <span class="apidocSignatureSpan">(node, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shallow(node, options) {
+  return new _ShallowWrapper2[&#x27;default&#x27;](node, null, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.enzyme.ReactWrapper" id="apidoc.module.enzyme.ReactWrapper">module enzyme.ReactWrapper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.enzyme.ReactWrapper.ReactWrapper" id="apidoc.element.enzyme.ReactWrapper.ReactWrapper">
+        function <span class="apidocSignatureSpan">enzyme.</span>ReactWrapper
+        <span class="apidocSignatureSpan">(nodes, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ReactWrapper(nodes, root) {
+  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+
+  _classCallCheck(this, ReactWrapper);
+
+  if (!global.window &#x26;&#x26; !global.document) {
+    throw new Error(&#x27;It looks like you called `mount()` without a global document being loaded.&#x27;);
+  }
+
+  if (!root) {
+    var ReactWrapperComponent = (0, _ReactWrapperComponent2[&#x27;default&#x27;])(nodes, options);
+    this.component = (0, _reactCompat.renderWithOptions)(_react2[&#x27;default&#x27;].createElement(ReactWrapperComponent, {
+      Component: nodes.type,
+      props: nodes.props,
+      context: options.context
+    }), options);
+    this.root = this;
+    this.node = this.component.getWrappedComponent();
+    this.nodes = [this.node];
+    this.length = 1;
+  } else {
+    this.component = null;
+    this.root = root;
+    if (!nodes) {
+      this.nodes = [];
+    } else if (!Array.isArray(nodes)) {
+      this.node = nodes;
+      this.nodes = [nodes];
+    } else {
+      this.node = nodes[0];
+      this.nodes = nodes;
+    }
+    this.length = this.nodes.length;
+  }
+  this.options = options;
+  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
+.childrenOfInst);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.enzyme.ShallowWrapper" id="apidoc.module.enzyme.ShallowWrapper">module enzyme.ShallowWrapper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.enzyme.ShallowWrapper.ShallowWrapper" id="apidoc.element.enzyme.ShallowWrapper.ShallowWrapper">
+        function <span class="apidocSignatureSpan">enzyme.</span>ShallowWrapper
+        <span class="apidocSignatureSpan">(nodes, root)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ShallowWrapper(nodes, root) {
+  var _this = this;
+
+  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+
+  _classCallCheck(this, ShallowWrapper);
+
+  validateOptions(options);
+  if (!root) {
+    this.root = this;
+    this.unrendered = nodes;
+    this.renderer = (0, _reactCompat.createShallowRenderer)();
+    (0, _Utils.withSetStateAllowed)(function () {
+      performBatchedUpdates(_this, function () {
+        _this.renderer.render(nodes, options.context);
+        var instance = _this.instance();
+        if (options.lifecycleExperimental &#x26;&#x26; instance &#x26;&#x26; typeof instance.componentDidMount === &#x27;function&#x27;) {
+          instance.componentDidMount();
+        }
+      });
+    });
+    this.node = this.renderer.getRenderOutput();
+    this.nodes = [this.node];
+    this.length = 1;
+  } else {
+    this.root = root;
+    this.unrendered = null;
+    this.renderer = null;
+    if (!Array.isArray(nodes)) {
+      this.node = nodes;
+      this.nodes = [nodes];
+    } else {
+      this.node = nodes[0];
+      this.nodes = nodes;
+    }
+    this.length = this.nodes.length;
+  }
+  this.options = options;
+  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
+.childrenOfNode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.enzyme.mount" id="apidoc.module.enzyme.mount">module enzyme.mount</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.enzyme.mount.mount" id="apidoc.element.enzyme.mount.mount">
+        function <span class="apidocSignatureSpan">enzyme.</span>mount
+        <span class="apidocSignatureSpan">(node, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mount(node, options) {
+  return new _ReactWrapper2[&#x27;default&#x27;](node, null, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.enzyme.render" id="apidoc.module.enzyme.render">module enzyme.render</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.enzyme.render.render" id="apidoc.element.enzyme.render.render">
+        function <span class="apidocSignatureSpan">enzyme.</span>render
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function render(node) {
+  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+
+  if (options.context &#x26;&#x26; (node.type.contextTypes || options.childContextTypes)) {
+    var childContextTypes = (0, _object2[&#x27;default&#x27;])({}, node.type.contextTypes || {}, options.childContextTypes);
+    var ContextWrapper = createContextWrapperForNode(node, options.context, childContextTypes);
+    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2[&#x27;default&#x27;].createElement(ContextWrapper, null));
+    return _cheerio2[&#x27;default&#x27;].load(_html).root();
+  }
+  var html = (0, _reactCompat.renderToStaticMarkup)(node);
+  return _cheerio2[&#x27;default&#x27;].load(html).root();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.enzyme.shallow" id="apidoc.module.enzyme.shallow">module enzyme.shallow</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.enzyme.shallow.shallow" id="apidoc.element.enzyme.shallow.shallow">
         function <span class="apidocSignatureSpan">enzyme.</span>shallow
         <span class="apidocSignatureSpan">(node, options)</span>
         </a>

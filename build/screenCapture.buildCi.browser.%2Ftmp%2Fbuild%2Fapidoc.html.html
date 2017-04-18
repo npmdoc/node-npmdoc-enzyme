@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/airbnb/enzyme#readme"
-
-    >enzyme (v2.8.2)</a>
+    <a href="https://github.com/airbnb/enzyme#readme">enzyme (v2.8.2)</a>
 </h1>
 <h4>JavaScript Testing utilities for React</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.enzyme">module enzyme</a><ol>
 
@@ -187,17 +180,17 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ReactWrapper(nodes, root) {
-  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+  var options = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
 
   _classCallCheck(this, ReactWrapper);
 
-  if (!global.window &#x26;&#x26; !global.document) {
-    throw new Error(&#x27;It looks like you called `mount()` without a global document being loaded.&#x27;);
+  if (!global.window &amp;&amp; !global.document) {
+    throw new Error('It looks like you called `mount()` without a global document being loaded.');
   }
 
   if (!root) {
-    var ReactWrapperComponent = (0, _ReactWrapperComponent2[&#x27;default&#x27;])(nodes, options);
-    this.component = (0, _reactCompat.renderWithOptions)(_react2[&#x27;default&#x27;].createElement(ReactWrapperComponent, {
+    var ReactWrapperComponent = (0, _ReactWrapperComponent2['default'])(nodes, options);
+    this.component = (0, _reactCompat.renderWithOptions)(_react2['default'].createElement(ReactWrapperComponent, {
       Component: nodes.type,
       props: nodes.props,
       context: options.context
@@ -221,7 +214,7 @@
     this.length = this.nodes.length;
   }
   this.options = options;
-  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
+  this.complexSelector = new _ComplexSelector2['default'](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
 .childrenOfInst);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -239,7 +232,7 @@
     <li>description and source-code<pre class="apidocCodePre">function ShallowWrapper(nodes, root) {
   var _this = this;
 
-  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+  var options = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
 
   _classCallCheck(this, ShallowWrapper);
 
@@ -252,7 +245,7 @@
       performBatchedUpdates(_this, function () {
         _this.renderer.render(nodes, options.context);
         var instance = _this.instance();
-        if (options.lifecycleExperimental &#x26;&#x26; instance &#x26;&#x26; typeof instance.componentDidMount === &#x27;function&#x27;) {
+        if (options.lifecycleExperimental &amp;&amp; instance &amp;&amp; typeof instance.componentDidMount === 'function') {
           instance.componentDidMount();
         }
       });
@@ -274,7 +267,7 @@
     this.length = this.nodes.length;
   }
   this.options = options;
-  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
+  this.complexSelector = new _ComplexSelector2['default'](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
 .childrenOfNode);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -290,7 +283,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function mount(node, options) {
-  return new _ReactWrapper2[&#x27;default&#x27;](node, null, options);
+  return new _ReactWrapper2['default'](node, null, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -305,16 +298,16 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function render(node) {
-  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+  var options = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : {};
 
-  if (options.context &#x26;&#x26; (node.type.contextTypes || options.childContextTypes)) {
-    var childContextTypes = (0, _object2[&#x27;default&#x27;])({}, node.type.contextTypes || {}, options.childContextTypes);
+  if (options.context &amp;&amp; (node.type.contextTypes || options.childContextTypes)) {
+    var childContextTypes = (0, _object2['default'])({}, node.type.contextTypes || {}, options.childContextTypes);
     var ContextWrapper = createContextWrapperForNode(node, options.context, childContextTypes);
-    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2[&#x27;default&#x27;].createElement(ContextWrapper, null));
-    return _cheerio2[&#x27;default&#x27;].load(_html).root();
+    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2['default'].createElement(ContextWrapper, null));
+    return _cheerio2['default'].load(_html).root();
   }
   var html = (0, _reactCompat.renderToStaticMarkup)(node);
-  return _cheerio2[&#x27;default&#x27;].load(html).root();
+  return _cheerio2['default'].load(html).root();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -329,7 +322,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function shallow(node, options) {
-  return new _ShallowWrapper2[&#x27;default&#x27;](node, null, options);
+  return new _ShallowWrapper2['default'](node, null, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -349,17 +342,17 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ReactWrapper(nodes, root) {
-  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+  var options = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
 
   _classCallCheck(this, ReactWrapper);
 
-  if (!global.window &#x26;&#x26; !global.document) {
-    throw new Error(&#x27;It looks like you called `mount()` without a global document being loaded.&#x27;);
+  if (!global.window &amp;&amp; !global.document) {
+    throw new Error('It looks like you called `mount()` without a global document being loaded.');
   }
 
   if (!root) {
-    var ReactWrapperComponent = (0, _ReactWrapperComponent2[&#x27;default&#x27;])(nodes, options);
-    this.component = (0, _reactCompat.renderWithOptions)(_react2[&#x27;default&#x27;].createElement(ReactWrapperComponent, {
+    var ReactWrapperComponent = (0, _ReactWrapperComponent2['default'])(nodes, options);
+    this.component = (0, _reactCompat.renderWithOptions)(_react2['default'].createElement(ReactWrapperComponent, {
       Component: nodes.type,
       props: nodes.props,
       context: options.context
@@ -383,7 +376,7 @@
     this.length = this.nodes.length;
   }
   this.options = options;
-  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
+  this.complexSelector = new _ComplexSelector2['default'](_MountedTraversal.buildInstPredicate, findWhereUnwrapped, _MountedTraversal
 .childrenOfInst);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -406,7 +399,7 @@
     <li>description and source-code<pre class="apidocCodePre">function ShallowWrapper(nodes, root) {
   var _this = this;
 
-  var options = arguments.length &#x3e; 2 &#x26;&#x26; arguments[2] !== undefined ? arguments[2] : {};
+  var options = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
 
   _classCallCheck(this, ShallowWrapper);
 
@@ -419,7 +412,7 @@
       performBatchedUpdates(_this, function () {
         _this.renderer.render(nodes, options.context);
         var instance = _this.instance();
-        if (options.lifecycleExperimental &#x26;&#x26; instance &#x26;&#x26; typeof instance.componentDidMount === &#x27;function&#x27;) {
+        if (options.lifecycleExperimental &amp;&amp; instance &amp;&amp; typeof instance.componentDidMount === 'function') {
           instance.componentDidMount();
         }
       });
@@ -441,7 +434,7 @@
     this.length = this.nodes.length;
   }
   this.options = options;
-  this.complexSelector = new _ComplexSelector2[&#x27;default&#x27;](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
+  this.complexSelector = new _ComplexSelector2['default'](_ShallowTraversal.buildPredicate, findWhereUnwrapped, _ShallowTraversal
 .childrenOfNode);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -462,7 +455,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function mount(node, options) {
-  return new _ReactWrapper2[&#x27;default&#x27;](node, null, options);
+  return new _ReactWrapper2['default'](node, null, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -482,16 +475,16 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function render(node) {
-  var options = arguments.length &#x3e; 1 &#x26;&#x26; arguments[1] !== undefined ? arguments[1] : {};
+  var options = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : {};
 
-  if (options.context &#x26;&#x26; (node.type.contextTypes || options.childContextTypes)) {
-    var childContextTypes = (0, _object2[&#x27;default&#x27;])({}, node.type.contextTypes || {}, options.childContextTypes);
+  if (options.context &amp;&amp; (node.type.contextTypes || options.childContextTypes)) {
+    var childContextTypes = (0, _object2['default'])({}, node.type.contextTypes || {}, options.childContextTypes);
     var ContextWrapper = createContextWrapperForNode(node, options.context, childContextTypes);
-    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2[&#x27;default&#x27;].createElement(ContextWrapper, null));
-    return _cheerio2[&#x27;default&#x27;].load(_html).root();
+    var _html = (0, _reactCompat.renderToStaticMarkup)(_react2['default'].createElement(ContextWrapper, null));
+    return _cheerio2['default'].load(_html).root();
   }
   var html = (0, _reactCompat.renderToStaticMarkup)(node);
-  return _cheerio2[&#x27;default&#x27;].load(html).root();
+  return _cheerio2['default'].load(html).root();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -511,7 +504,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function shallow(node, options) {
-  return new _ShallowWrapper2[&#x27;default&#x27;](node, null, options);
+  return new _ShallowWrapper2['default'](node, null, options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -525,3 +518,4 @@
     ]
 </div>
 </div>
+</body></html>
