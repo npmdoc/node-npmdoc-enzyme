@@ -227,7 +227,23 @@
     <li>description and source-code<pre class="apidocCodePre">function mount(node, options) {
   return new _ReactWrapper2[&#x27;default&#x27;](node, null, options);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Minor Changes
+
+- Add `attachTo` option to `mount` to mount to a specific element ([#160](https://github.com/airbnb/enzyme/pull/160))
+
+- Add `.debug()` method to `ReactWrapper` ([#158](https://github.com/airbnb/enzyme/pull/158))
+
+- Add `.<span class="apidocCodeKeywordSpan">mount</span>()` and `.unmount()` APIs to `ReactWrapper` ([#155](https://github.com/airbnb
+/enzyme/pull/155))
+
+- Add `.render()` method to `ReactWrapper` ([#156](https://github.com/airbnb/enzyme/pull/156))
+
+- Allow `.contains()` to accept an array of nodes ([#154](https://github.com/airbnb/enzyme/pull/154))
+
+- Add `.context()` method to `ReactWrapper` and `ShallowWrapper` ([#152](https://github.com/airbnb/enzyme/pull/152))
+...</pre></li>
     </ul>
 
 
@@ -251,7 +267,24 @@
   var html = (0, _reactCompat.renderToStaticMarkup)(node);
   return _cheerio2[&#x27;default&#x27;].load(html).root();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+- fix bug in matching by type displayName ([#230](https://github.com/airbnb/enzyme/pull/230))
+
+- add more useful warnings for missing implicit dependencies ([#228](https://github.com/airbnb/enzyme/pull/228))
+
+- improve SFC support for `.type()` ([#196](https://github.com/airbnb/enzyme/pull/196))
+
+- fix null handling for `.html()` and `.<span class="apidocCodeKeywordSpan">render</span>()` ([#196](https://github.com/airbnb/enzyme
+/pull/196))
+
+- moved from `underscore` to `lodash` ([#189](https://github.com/airbnb/enzyme/pull/189))
+
+
+## 2.0.0 (February 10, 2016)
+
+### Major Changes (breaking)
+...</pre></li>
     </ul>
 
 
@@ -266,7 +299,23 @@
     <li>description and source-code<pre class="apidocCodePre">function shallow(node, options) {
   return new _ShallowWrapper2[&#x27;default&#x27;](node, null, options);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    expect(nodes.at(2).hasClass(&#x27;baz&#x27;)).to.equal(true);
+    expect(nodes.at(3).hasClass(&#x27;baz&#x27;)).to.equal(true);
+    expect(nodes.at(4).hasClass(&#x27;bax&#x27;)).to.equal(true);
+    expect(nodes.at(5).hasClass(&#x27;bax&#x27;)).to.equal(true);
+  });
+});
+
+describe(&#x27;.<span class="apidocCodeKeywordSpan">shallow</span>()&#x27;, () =&#x3e; {
+  it(&#x27;should return a shallow rendered instance of the current node&#x27;, () =&#x3e; {
+    class Bar extends React.Component {
+      render() {
+        return (
+          &#x3c;div&#x3e;
+            &#x3c;div className=&#x22;in-bar&#x22; /&#x3e;
+          &#x3c;/div&#x3e;
+...</pre></li>
     </ul>
 
 
