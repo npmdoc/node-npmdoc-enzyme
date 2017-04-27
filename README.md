@@ -1,6 +1,6 @@
 # npmdoc-enzyme
 
-#### api documentation for  [enzyme (v2.8.2)](https://github.com/airbnb/enzyme#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-enzyme.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-enzyme) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-enzyme.svg)](https://travis-ci.org/npmdoc/node-npmdoc-enzyme)
+#### basic api documentation for  [enzyme (v2.8.2)](https://github.com/airbnb/enzyme#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-enzyme.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-enzyme) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-enzyme.svg)](https://travis-ci.org/npmdoc/node-npmdoc-enzyme)
 
 #### JavaScript Testing utilities for React
 
@@ -153,7 +153,8 @@
         "travis": "babel-node \"$(which istanbul)\" cover --report html _mocha -- test --recursive",
         "version": "npm run build"
     },
-    "version": "2.8.2"
+    "version": "2.8.2",
+    "bin": {}
 }
 ```
 
